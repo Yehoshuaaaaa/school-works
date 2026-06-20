@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tasks | Simple Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1 class="app-title">Tasks</h1>
+      <p class="app-subtitle">A focused space to plan your day</p>
+    </header>
+
+    <main class="app-main">
+      <section class="task-input-section" aria-label="Add a new task">
+        <form id="task-form" class="task-form">
+          <label for="task-input" class="visually-hidden">New task</label>
+          <input
+            type="text"
+            id="task-input"
+            class="task-input"
+            placeholder="What needs to be done?"
+            autocomplete="off"
+            maxlength="200"
+            aria-required="true"
+          >
+          <button type="submit" class="btn btn-primary" id="add-task-btn">
+            Add Task
+          </button>
+        </form>
+        <p id="input-error" class="input-error" role="alert" aria-live="polite"></p>
+      </section>
+
+      <section class="task-list-section" aria-label="Your tasks">
+        <div class="task-list-header">
+          <h2 class="task-list-title">My Tasks</h2>
+          <span id="task-count" class="task-count">0 tasks</span>
+        </div>
+
+        <ul id="task-list" class="task-list" aria-live="polite">
+          <!-- Tasks are rendered here by script.js -->
+        </ul>
+
+        <div id="empty-state" class="empty-state">
+          <p>No tasks yet. Add your first task above.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>Your tasks are saved automatically on this device.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
